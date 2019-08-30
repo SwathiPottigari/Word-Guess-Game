@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Word-Guess</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="shortcut icon" href="assets/images/Favicon.jfif" type="image/jpg">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
     <!-- <div class="banner">
 
@@ -16,81 +19,69 @@
     <!-- <div class="myimage">
  
         </div> -->
-   <div class="container">
-      <div class="row" >
-          <div id="col-md justify-content-center" >
-              <!-- <div id="banner"></div> -->
-              <img id="banner" src="assets/images/Navigatorimage.png" alt="">
-          </div>
-      </div>
-      <div class="row justify-content-center">
-          <div class="col-md justify-content-center">
-              <div id="clue"></div>
-          </div>
-      </div>
-      <div class="row">
-          <div class="col-md-6">
-                <div id="images"></div>
-          </div>
-          <div class="col-md-6">
-              <div class="container">
-                    <div class="row">
-                        <div class="col-md">
-                            Press any key to start!!
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                              WINS:
-                        </div>
-                        <div class="col-md-6" id="wins">                            
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md">
-                            Current word
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md" id="hide">
+    <header>
+        <div id="mainHeading">
+            <h1>Guess The Word...</h1>
+        </div>
+    </header>
 
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md">
-                            No.of guesses remaining
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md" id="guessLeft">
+    <div class="mainWrapper">
 
+        <div id="clue"></div>
+        <div class="tblWrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div id="images"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md">
+                                Press any key to start!!
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-md-6" id="winsLabel">
+                                Wins :
+                            </div>
+                            <div class="col-md-6 justify-content-left" id="wins">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md">
+                                Current Word
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md" id="hide">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md">
+                                Number of guesses remaining
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md" id="guessLeft">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md">
+                                Letters already Guessed
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md" id="userLetters">
+                            </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md">
-                                Already Guessed
-                        </div>                        
-                    </div>
-                    <div class="row">
-                        <div class="col-md" id="userLetters">
-
-                        </div>
-                    </div>
-              </div>
+                </div>
             </div>
-      </div>
-  </div>
+        </div>
 
-    <!-- <h1>Word Guess</h1>
-    <h3>Press any key to start</h3>
-    <p >WINS</p>
-    <p id="wins"></p>
-    <p >Current word</p>
-    <p id="hide"></p>
-    <p >Chances left</p>
-    <p id="guessLeft"></p>
-    <p >User guessed letters</p>
-    <p id="userLetters"></p> -->
+    </div>
+    <footer class="footer mt-auto py-3" style="text-align: center">Copyright@</footer>
     <script src="assets/javascript/game.js"></script>
 </body>
+
 </html>

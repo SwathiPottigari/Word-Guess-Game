@@ -1,15 +1,19 @@
-var words = ["hello", "happy", "smile"];
+var words = [{w:"hello",c:"It's a greeting !!",img:"img1"}, {w:"happy",c:"It's an emotion !!",img:"img2"},{w:"smile",c:"you do it when you are happy !!",img:"smiley"}];
 var randomWord = words[Math.floor(Math.random() * words.length)];
 var hide = document.getElementById("hide");
 var guessLeft=document.getElementById("guessLeft");
-var chancesLeft = randomWord.length;
+var clue=document.getElementById("clue");
+var image=document.getElementById("images");
+var chancesLeft = randomWord.w.length;
 var userGuessedArray=[];
 var tempUserWord=[];
 var wins=0;
 
 // This method is called when browser is loaded or refreshed
 window.onload = function () {
-    hide.innerHTML = hideWord(randomWord);
+    clue.textContent=randomWord.c;
+    image.innerHTML= '<img  src="assets/images/'+randomWord.img+'.png" alt="">';
+    hide.innerHTML = hideWord(randomWord.w);
     guessLeft.textContent=chancesLeft;
 };
 
@@ -39,18 +43,17 @@ function hideWord(word) {
 
 // This method reveals the letter as the user selects letter
 function chosenWord(userKey){ 
-    if(randomWord.indexOf(userKey)>-1)
+    if(randomWord.w.indexOf(userKey)>-1)
     {    
-        for (let i = 0; i < randomWord.length; i++) {        
-            if (userKey ===randomWord[i])
+        for (let i = 0; i < randomWord.w.length; i++) {        
+            if (userKey ===randomWord.w[i])
             {
                 document.getElementById(i).textContent=userKey;
                 tempUserWord.push(userKey);            
             }  
         }
-        console.log(tempUserWord);
         // isSameWord(userWord);
-        if(tempUserWord.length===randomWord.length)
+        if(tempUserWord.length===randomWord.w.length)
         {
             wins++;
             resetGame();
@@ -84,12 +87,13 @@ function userGuessedLetters(letter){
 // This function resets the game
 function resetGame(){
     randomWord = words[Math.floor(Math.random() * words.length)];
-    hide.innerHTML = hideWord(randomWord);
-    chancesLeft = randomWord.length;
+    hide.innerHTML = hideWord(randomWord.w);
+    chancesLeft = randomWord.w.length;
     userGuessedArray=[];
     guessLeft.textContent=chancesLeft;
     tempUserWord=[];
     document.getElementById("userLetters").textContent='';
     document.getElementById("wins").textContent=wins;
+    clue.textContent=randomWord.c;
 }
 

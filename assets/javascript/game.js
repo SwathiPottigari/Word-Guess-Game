@@ -8,10 +8,12 @@ var chancesLeft = randomWord.w.length;
 var userGuessedArray=[];
 var tempUserWord=[];
 var wins=0;
+var lostAudio=document.getElementById("lostAudio");
+var wonAudio=document.getElementById("wonAudio");
 
 // This method is called when browser is loaded or refreshed
 window.onload = function () {
-    clue.textContent=randomWord.c;
+    clue.textContent="Hint : "+randomWord.c;
     image.innerHTML= '<img  src="assets/images/'+randomWord.img+'.png" alt="">';
     hide.innerHTML = hideWord(randomWord.w);
     guessLeft.textContent=chancesLeft;
@@ -26,6 +28,7 @@ document.onkeyup=function(event){
         guessLeft.textContent=chancesLeft;
     }
     else{
+        lostAudio.play();
        resetGame();
     }    
 };
@@ -55,11 +58,12 @@ function chosenWord(userKey){
         // isSameWord(userWord);
         if(tempUserWord.length===randomWord.w.length)
         {
+            wonAudio.play();
             wins++;
             resetGame();
         }
     }
-    else{
+    else if(!(userGuessedArray.indexOf(userKey)>-1)){
         chancesLeft--;
         userGuessedLetters(userKey);        
     }    
@@ -94,6 +98,6 @@ function resetGame(){
     tempUserWord=[];
     document.getElementById("userLetters").textContent='';
     document.getElementById("wins").textContent=wins;
-    clue.textContent=randomWord.c;
+    clue.textContent="Hint : "+randomWord.c;
 }
 

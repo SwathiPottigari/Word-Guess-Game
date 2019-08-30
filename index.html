@@ -21,7 +21,7 @@
         </div> -->
     <header>
         <div id="mainHeading">
-            <h1>Guess The Word...</h1>
+            <h1 id="mainHeading">Guess The Word...</h1>
         </div>
     </header>
 
@@ -36,42 +36,42 @@
                     </div>
                     <div class="col-md-6">
                         <div class="row">
-                            <div class="col-md">
+                            <div class="col-md pageContent">
                                 Press any key to start!!
                             </div>
                         </div>
                         <div class="row justify-content-center">
-                            <div class="col-md-6" id="winsLabel">
+                            <div class="col-md-6 pageContent" id="winsLabel">
                                 Wins :
                             </div>
-                            <div class="col-md-6 justify-content-left" id="wins">
+                            <div class="col-md-6 pageContent" id="wins">
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md">
+                            <div class="col-md pageContent">
                                 Current Word
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md" id="hide">
+                            <div class="col-md pageContent" id="hide">
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md">
+                            <div class="col-md pageContent">
                                 Number of guesses remaining
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md" id="guessLeft">
+                            <div class="col-md pageContent" id="guessLeft">
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md">
+                            <div class="col-md pageContent">
                                 Letters already Guessed
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md" id="userLetters">
+                            <div class="col-md pageContent" id="userLetters">
                             </div>
                         </div>
                     </div>
@@ -80,6 +80,12 @@
         </div>
 
     </div>
+    <audio id="lostAudio">
+        <source src="assets/images/Lost.mp3" type="audio/mpeg" >
+    </audio>
+    <audio id="wonAudio">
+            <source src="assets/images/Win.mp3" type="audio/mpeg" >
+        </audio>
     <footer class="footer mt-auto py-3" style="text-align: center">Copyright@</footer>
     <script src="assets/javascript/game.js"></script>
 </body>

@@ -89,9 +89,10 @@ function userGuessedLetters(letter){
 }
 
 // This function resets the game
-function resetGame(){
+function resetGame(){    
     randomWord = words[Math.floor(Math.random() * words.length)];
     hide.innerHTML = hideWord(randomWord.w);
+    image.innerHTML= '<img  src="assets/images/'+randomWord.img+'.png" alt="" class="img-fluid" style="padding:20px;">';
     chancesLeft = randomWord.w.length;
     userGuessedArray=[];
     guessLeft.textContent=chancesLeft;
